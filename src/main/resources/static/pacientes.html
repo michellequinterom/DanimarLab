@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacientes · Laboratorio Danimar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+  <main class="content">
+    <header class="topbar">
+      <span></span>
+      <span>Bienvenida, <strong>Licenciada</strong></span>
+    </header>
+    <div class="content-inner">
+      <h1>Pacientes</h1>
+      <p class="subtitulo">Registro y búsqueda de pacientes del laboratorio.</p>
+
+      <div class="tabs-pac">
+        <button type="button" class="tab-pac activo" data-tab="registrar" onclick="verTab('registrar')">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          Registrar Pacientes
+        </button>
+        <button type="button" class="tab-pac" data-tab="consultar" onclick="verTab('consultar')">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Consultar Pacientes
+        </button>
+      </div>
+
+      <!-- REGISTRAR -->
+      <div id="tab-registrar" class="tab-panel">
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-head-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+            </span>
+            <div class="panel-head-text">
+              <h2>Registro de Nuevo Paciente</h2>
+              <p>Complete los datos para registrar un paciente</p>
+            </div>
+          </div>
+          <div class="form-fila">
+            <div><label>Cédula</label><input type="text" id="cedula"></div>
+            <div><label>Nombre completo</label><input type="text" id="nombre"></div>
+            <div><label>Edad</label><input type="number" id="edad" min="0" max="120"></div>
+            <div class="form-boton"><button type="button" id="btn-guardar">Guardar</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONSULTAR -->
+      <div id="tab-consultar" class="tab-panel" style="display:none">
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-head-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <div class="panel-head-text">
+              <h2>Directorio de Pacientes</h2>
+              <p id="conteo-pac">Pacientes registrados</p>
+            </div>
+          </div>
+          <div class="form-busqueda">
+            <input type="text" id="busqueda" placeholder="Buscar por nombre o cédula...">
+            <button type="button" id="btn-buscar">Buscar</button>
+            <a href="#" class="btn-limpiar" id="btn-limpiar">Limpiar</a>
+          </div>
+          <table class="tabla">
+            <thead>
+              <tr><th>Cédula</th><th>Nombre completo</th><th>Edad</th><th>Registrado</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="tabla-pacientes">
+              <tr><td colspan="5" class="vacio">Cargando…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer class="pie">Lic. Iraides M. Quintero R. &middot; Laboratorio Clínico Danimar</footer>
+  </main>
+</div>
+<script src="js/layout.js"></script>
+<script>montarLayout('pacientes');</script>
+<script src="js/pacientes.js"></script>
+</body>
+</html>

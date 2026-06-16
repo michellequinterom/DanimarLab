@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generar Reporte · Laboratorio Danimar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+  <main class="content">
+    <header class="topbar"><span></span><span>Bienvenida, <strong>Licenciada</strong></span></header>
+    <div class="content-inner">
+      <h1>Generar Reporte</h1>
+      <p class="subtitulo">Selecciona el paciente y los exámenes para crear una nueva orden.</p>
+
+      <div class="panel">
+        <div class="campo">
+          <label class="campo-label">Paciente <span class="req">*</span></label>
+          <select id="paciente" class="campo-box"></select>
+        </div>
+
+        <label class="campo-label" style="margin-top:18px">Exámenes <span class="req">*</span></label>
+        <div id="zona-examenes" class="zona-examenes">
+          <p class="vacio-examenes">Cargando exámenes…</p>
+        </div>
+
+        <div class="seleccionados">
+          <strong>Seleccionados:</strong>
+          <div id="chips" class="chips-sel"><span class="sel-vacio">Ninguno todavía.</span></div>
+        </div>
+
+        <div class="campo" style="margin-top:16px">
+          <label class="campo-label">Observaciones</label>
+          <textarea id="observaciones" class="campo-box" placeholder="Opcional"></textarea>
+        </div>
+
+        <div class="res-acciones">
+          <span style="font-weight:700;color:#0d2952;font-size:16px">Total: Bs. <span id="total">0,00</span></span>
+          <button class="btn" id="btn-generar" style="margin-left:auto">Generar reporte y cargar resultados</button>
+        </div>
+      </div>
+    </div>
+    <footer class="pie">Lic. Iraides M. Quintero R. &middot; Laboratorio Clínico Danimar</footer>
+  </main>
+</div>
+<script src="js/layout.js"></script>
+<script>montarLayout('examen');</script>
+<script src="js/generar-reporte.js"></script>
+</body>
+</html>

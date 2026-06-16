@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingresar · Laboratorio Danimar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+  <div class="login-card">
+    <div class="login-logo">
+      <h1>DANIMAR</h1>
+      <p>Laboratorio Clínico</p>
+    </div>
+    <div id="err" class="alert-error" style="display:none">Usuario o contraseña incorrectos.</div>
+    <label>Usuario</label>
+    <input type="text" id="usuario" value="licenciada">
+    <label>Contraseña</label>
+    <input type="password" id="clave" placeholder="••••••••">
+    <button id="btn">Ingresar</button>
+    <p class="login-hint">Usuario: <strong>licenciada</strong> &middot; Contraseña: <strong>danimar2026</strong></p>
+  </div>
+  <script>
+    const API_BASE = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+      ? (location.port === "8080" ? "/api" : "http://localhost:8080/api")
+      : "/api";
+
+    async function entrar() {
+      const usuario = document.getElementById("usuario").value.trim();
+      const clave = document.getElementById("clave").value;
+      try {
+        const r = await (await fetch(`${API_BASE}/login`, {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ usuario, clave })
+        })).json();
+        if (r.ok) {
+          localStorage.setItem("danimar_login", "1");
+          location.href = "pacientes.html";
+        } else {
+          document.getElementById("err").style.display = "block";
+        }
+      } catch (e) {
+        document.getElementById("err").textContent = "No se pudo conectar con el servidor.";
+        document.getElementById("err").style.display = "block";
+      }
+    }
+    document.getElementById("btn").addEventListener("click", entrar);
+    document.getElementById("clave").addEventListener("keydown", e => { if (e.key === "Enter") entrar(); });
+  </script>
+</body>
+</html>

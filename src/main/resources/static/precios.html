@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Precios · Laboratorio Danimar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+  <main class="content">
+    <header class="topbar">
+      <span></span>
+      <span>Bienvenida, <strong>Licenciada</strong></span>
+    </header>
+    <div class="content-inner">
+      <h1>Lista de Precios</h1>
+      <p class="subtitulo">Catálogo de exámenes del laboratorio con su costo y parámetros.</p>
+
+      <div class="form-busqueda">
+        <input type="text" id="busqueda" placeholder="Buscar examen...">
+        <a href="agregar-examen.html" class="btn">+ Agregar examen</a>
+      </div>
+
+      <div id="catalogo">
+        <div class="panel"><p class="subtitulo">Cargando catálogo…</p></div>
+      </div>
+    </div>
+    <footer class="pie">Lic. Iraides M. Quintero R. &middot; Laboratorio Clínico Danimar</footer>
+  </main>
+</div>
+<script src="js/layout.js"></script>
+<script>montarLayout('precios');</script>
+<script src="js/precios.js"></script>
+</body>
+</html>

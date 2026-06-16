@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes · Laboratorio Danimar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+  <main class="content">
+    <header class="topbar"><span></span><span>Bienvenida, <strong>Licenciada</strong></span></header>
+    <div class="content-inner">
+      <h1>Reportes</h1>
+      <p class="subtitulo">Todos los reportes registrados en el laboratorio.</p>
+
+      <div class="stats-grid" id="stats"></div>
+
+      <div class="panel">
+        <div class="form-filtros">
+          <input type="text" id="q" class="filtro-ancho" placeholder="Cédula o nombre...">
+          <select id="estado" class="filtro-ancho">
+            <option value="">Todos los pagos</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="parcial">Parcial</option>
+            <option value="pago">Pagado</option>
+          </select>
+          <label>Desde <input type="date" id="desde"></label>
+          <label>Hasta <input type="date" id="hasta"></label>
+          <button class="btn" id="btn-filtrar">Filtrar</button>
+          <a href="#" class="btn btn-sec" id="btn-limpiar">Limpiar</a>
+        </div>
+
+        <table class="tabla">
+          <thead>
+            <tr><th>Reporte</th><th>Fecha</th><th>Cédula</th><th>Paciente</th><th>Costo total</th><th>Pago</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="tabla-reportes"><tr><td colspan="7" class="vacio">Cargando…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <footer class="pie">Lic. Iraides M. Quintero R. &middot; Laboratorio Clínico Danimar</footer>
+  </main>
+</div>
+<script src="js/layout.js"></script>
+<script>montarLayout('reportes');</script>
+<script src="js/reportes.js"></script>
+</body>
+</html>

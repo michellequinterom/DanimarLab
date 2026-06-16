@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Examen · Laboratorio Danimar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+  <main class="content">
+    <header class="topbar"><span></span><span>Bienvenida, <strong>Licenciada</strong></span></header>
+    <div class="content-inner">
+      <h1>Agregar Examen al Catálogo</h1>
+      <p class="subtitulo">Crea un examen nuevo con sus parámetros.</p>
+
+      <div class="panel">
+        <div class="form-fila-3">
+          <div><label class="campo-label">Categoría</label><select id="grupo" class="campo-box"></select></div>
+          <div><label class="campo-label">Nombre del examen</label><input id="nombre" class="campo-box"></div>
+          <div><label class="campo-label">Muestra</label><input id="muestra" class="campo-box" placeholder="SANGRE, SUERO..."></div>
+        </div>
+        <div class="form-fila-3" style="margin-top:14px">
+          <div><label class="campo-label">Costo (Bs.)</label><input id="costo" type="number" class="campo-box" value="0" min="0" step="0.01"></div>
+          <div></div><div></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Parámetros</h2>
+        <table class="tabla campos-tabla">
+          <thead><tr><th>Nombre</th><th>Unidad</th><th>Valor de referencia</th><th></th></tr></thead>
+          <tbody id="params"></tbody>
+        </table>
+        <button type="button" class="btn-accion" id="btn-add-param" style="margin-top:12px">+ Agregar parámetro</button>
+      </div>
+
+      <div class="res-acciones">
+        <button class="btn" id="btn-guardar">Guardar examen</button>
+        <a class="btn btn-sec" href="precios.html">Cancelar</a>
+      </div>
+    </div>
+    <footer class="pie">Lic. Iraides M. Quintero R. &middot; Laboratorio Clínico Danimar</footer>
+  </main>
+</div>
+<script src="js/layout.js"></script>
+<script>montarLayout('precios');</script>
+<script src="js/agregar-examen.js"></script>
+</body>
+</html>

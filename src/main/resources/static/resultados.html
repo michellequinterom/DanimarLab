@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargar Resultados · Laboratorio Danimar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+  <main class="content">
+    <header class="topbar"><span></span><span>Bienvenida, <strong>Licenciada</strong></span></header>
+    <div class="content-inner">
+      <div class="res-head">
+        <div>
+          <h1>Cargar Resultados</h1>
+          <p class="subtitulo">Ingresa los valores obtenidos para cada parámetro.</p>
+        </div>
+      </div>
+
+      <div class="ficha-paciente" id="ficha">Cargando…</div>
+
+      <div id="examenes" style="margin-top:18px"></div>
+
+      <div class="panel panel-pago">
+        <h2>Estado de pago</h2>
+        <div class="pago-fila">
+          <div>
+            <label>Estado</label>
+            <select id="estado" class="campo-box">
+              <option value="pendiente">Pendiente</option>
+              <option value="parcial">Parcial (abono)</option>
+              <option value="pago">Pagado</option>
+            </select>
+          </div>
+          <div>
+            <label>Monto abonado (Bs.)</label>
+            <input type="number" id="abonado" class="campo-box" value="0" min="0" step="0.01">
+          </div>
+          <div></div>
+          <div class="pago-boton">
+            <button class="btn btn-sec" id="btn-pago">Guardar pago</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="res-acciones">
+        <button class="btn" id="btn-guardar">Guardar resultados</button>
+        <a class="btn btn-sec" id="btn-ver">Ver reporte</a>
+      </div>
+    </div>
+    <footer class="pie">Lic. Iraides M. Quintero R. &middot; Laboratorio Clínico Danimar</footer>
+  </main>
+</div>
+<script src="js/layout.js"></script>
+<script>montarLayout('examen');</script>
+<script src="js/resultados.js"></script>
+</body>
+</html>

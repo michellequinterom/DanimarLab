@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auditoría · Laboratorio Danimar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+  <main class="content">
+    <header class="topbar"><span></span><span>Bienvenida, <strong>Licenciada</strong></span></header>
+    <div class="content-inner">
+      <h1>Auditoría</h1>
+      <p class="subtitulo">Historial de acciones sensibles del sistema.</p>
+
+      <div class="panel">
+        <table class="tabla">
+          <thead><tr><th>Fecha y hora</th><th>Usuario</th><th>Acción</th><th>Detalle</th></tr></thead>
+          <tbody id="tabla-auditoria"><tr><td colspan="4" class="vacio">Cargando…</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h2>Limpiar historial</h2>
+        <p class="subtitulo">Solo puede borrarse con la contraseña de auditoría (distinta a la de la sesión).</p>
+        <div class="form-busqueda">
+          <input type="password" id="clave-audit" placeholder="Contraseña de auditoría">
+          <button type="button" class="btn btn-danger" id="btn-limpiar">Limpiar historial</button>
+        </div>
+      </div>
+    </div>
+    <footer class="pie">Lic. Iraides M. Quintero R. &middot; Laboratorio Clínico Danimar</footer>
+  </main>
+</div>
+<script src="js/layout.js"></script>
+<script>montarLayout('auditoria');</script>
+<script src="js/auditoria.js"></script>
+</body>
+</html>
