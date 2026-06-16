@@ -17,22 +17,6 @@ la API y las páginas.
 - **Próximas etapas:** Generar reporte, Reportes/estadísticas, Nuevo Examen,
   Auditoría, Seguridad (login).
 
-## Cómo ejecutarlo en tu Mac
-Necesitas Java 17+ y Maven (o usa el Dockerfile). Desde la carpeta del proyecto:
-
-```
-mvn spring-boot:run
-```
-
-Abre en el navegador: http://localhost:8080  → te lleva a Pacientes.
-
-> Si tienes una versión de Java muy nueva (25) y falla, instala Java 21 con
-> SDKMAN y reintenta (ver notas más abajo).
-
-## Desplegar como sitio web (Render)
-1. Sube este proyecto a un repositorio de GitHub propio.
-2. En https://render.com → New + → Blueprint → elige el repo (o pega su URL).
-3. Render lee `render.yaml`, construye con el `Dockerfile` y te da una URL pública.
 
 ## Estructura
 ```
